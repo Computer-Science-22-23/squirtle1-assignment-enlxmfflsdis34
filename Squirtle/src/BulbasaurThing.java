@@ -40,4 +40,5 @@ public class BulbasaurThing extends PokeThing {
 		Gui g = getBoard().getGui();
 		g.appendTextWindow("Bulbasaur has been tickled.");
 	}
+	
 }
