@@ -2,6 +2,7 @@
 public class SquirtleThing extends PokeThing {
 
 	int squaresMoved = 0;
+	int flowercollect = 0;
 	
 	/**
 	 * SquirtleThing Constructor
@@ -58,7 +59,8 @@ public class SquirtleThing extends PokeThing {
 		if (flower) 
 		{
 			Gui g = getBoard().getGui();
-			g.appendTextWindow("There is a flower");
+			flowercollect = flowercollect + 1;
+			g.appendTextWindow("I collected " + flowercollect + " flowers!");
 			move();
 		}
 		else

@@ -28,7 +28,14 @@ public class BulbasaurThing extends PokeThing {
 	 */	
 	public void step()
 	{
-		putFlower();
+		boolean stuck;
+		Location nextLoc = getDirection().getNextLocation(getLocation()); 
+		stuck = !(nextLoc.isValid(getBoard()));
+		if (stuck)
+		{
+			setDirection(getDirection().right());
+			putFlower();
+		}
 		move();
 	}
 	
@@ -40,5 +47,4 @@ public class BulbasaurThing extends PokeThing {
 		Gui g = getBoard().getGui();
 		g.appendTextWindow("Bulbasaur has been tickled.");
 	}
-	
 }
